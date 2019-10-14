@@ -16,6 +16,7 @@ public class IncomingWebhookRequest {
 		String url = webhookDetails.getUrl();
 		JSONObject object = new JSONObject();
 		object.put("text", text);
+		object.put("summary", text);
 		Unirest.post(url).header("Content-Type", "application/json").body(object).asString();
 	}
 }
